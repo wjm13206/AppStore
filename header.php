@@ -69,7 +69,7 @@
         <div class="container">
             <!-- LOGO -->
             <a class="navbar-brand fw-bold" href="index.php">
-                <i class="bi bi-box-seam me-2"></i>应用商店
+                <i class="bi bi-box-seam me-2"></i><?php echo SITE_NAME; ?>
             </a>
             
             <!-- 移动端菜单按钮 -->
