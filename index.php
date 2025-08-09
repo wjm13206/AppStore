@@ -21,7 +21,7 @@ if (empty($popularApps)) {
 }
 
 // 头部模板
-include 'templates/header.php';
+include 'includes/header.php';
 ?>
 
 <div class="container mt-4">
@@ -98,5 +98,5 @@ To get to you -->
 
 <?php
 // 页脚模板 
-include 'templates/footer.php';
+include 'includes/footer.php';
 ?>

@@ -18,7 +18,7 @@ if (!$app) {
 }
 
 // 头部文件
-include 'templates/header.php';
+include 'includes/header.php';
 ?>
 
 <div class="container mt-4">
@@ -55,5 +55,5 @@ include 'templates/header.php';
 
 <?php
 // 包含页脚文件
-include 'templates/footer.php';
+include 'includes/footer.php';
 ?>
