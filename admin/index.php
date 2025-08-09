@@ -8,15 +8,6 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
     header("Location: login.php");
     exit;
 }
-
-// 应用总数
-$total_apps = $conn->query("SELECT COUNT(*) FROM apps")->fetch_row()[0];
-
-// 分类总数
-$total_categories = $conn->query("SELECT COUNT(*) FROM categories")->fetch_row()[0];
-
-// 总下载量
-$total_downloads = $conn->query("SELECT SUM(download_count) FROM apps")->fetch_row()[0] ?? 0;
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -48,13 +39,21 @@ $total_downloads = $conn->query("SELECT SUM(download_count) FROM apps")->fetch_r
         <div class="main-content">
             <h2>后台管理首页</h2>
             <hr>
-            
+<!--             
+I just wanna be left alone
+我只想一个人独处
+Just wanna be left alone
+我只想一个人独处
+I feel it in my bones
+发自内心的愿望
+Feel it in my bones
+发自内心的愿望 -->
             <div class="layui-row layui-col-space15">
                 <div class="layui-col-md4">
                     <div class="layui-card">
                         <div class="layui-card-header">应用总数</div>
                         <div class="layui-card-body">
-                            <h1><?php echo $total_apps; ?></h1>
+                            <h1><?php echo getTotalApps(); ?></h1>
                         </div>
                     </div>
                 </div>
@@ -63,7 +62,7 @@ $total_downloads = $conn->query("SELECT SUM(download_count) FROM apps")->fetch_r
                     <div class="layui-card">
                         <div class="layui-card-header">分类总数</div>
                         <div class="layui-card-body">
-                            <h1><?php echo $total_categories; ?></h1>
+                            <h1><?php echo getTotalCategories(); ?></h1>
                         </div>
                     </div>
                 </div>
@@ -72,7 +71,7 @@ $total_downloads = $conn->query("SELECT SUM(download_count) FROM apps")->fetch_r
                     <div class="layui-card">
                         <div class="layui-card-header">总下载量</div>
                         <div class="layui-card-body">
-                            <h1><?php echo $total_downloads; ?></h1>
+                            <h1><?php echo getTotalDownloads(); ?></h1>
                         </div>
                     </div>
                 </div>
@@ -82,7 +81,7 @@ $total_downloads = $conn->query("SELECT SUM(download_count) FROM apps")->fetch_r
                 <div class="layui-card-header">系统信息</div>
                 <div class="layui-card-body">
                     <p>PHP版本: <?php echo PHP_VERSION; ?></p>
-                    <p>服务器软件: <?php echo $_SERVER['SERVER_SOFTWARE'] ?? '未知'; ?></p>>
+                    <p>服务器软件: <?php echo $_SERVER['SERVER_SOFTWARE'] ?? '未知'; ?></p>
                 </div>
             </div>
         </div>

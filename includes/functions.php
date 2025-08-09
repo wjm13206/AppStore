@@ -92,6 +92,51 @@ function searchApps($query) {
 }
 
 /**
+ * 获取应用总数
+ * 
+ * @return int 应用总数
+ */
+function getTotalApps() {
+    global $conn;
+    
+    $result = $conn->query("SELECT COUNT(*) FROM apps");
+    if ($result) {
+        return $result->fetch_row()[0];
+    }
+    return 0;
+}
+
+/**
+ * 获取分类总数
+ * 
+ * @return int 分类总数
+ */
+function getTotalCategories() {
+    global $conn;
+    
+    $result = $conn->query("SELECT COUNT(*) FROM categories");
+    if ($result) {
+        return $result->fetch_row()[0];
+    }
+    return 0;
+}
+
+/**
+ * 获取总下载量
+ * 
+ * @return int 总下载量
+ */
+function getTotalDownloads() {
+    global $conn;
+    
+    $result = $conn->query("SELECT SUM(download_count) FROM apps");
+    if ($result) {
+        return $result->fetch_row()[0] ?? 0;
+    }
+    return 0;
+}
+
+/**
  * 检查管理员是否已登录
  * 
  * @return bool 如果管理员已登录返回true，否则返回false
