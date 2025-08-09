@@ -27,7 +27,34 @@ include 'templates/header.php';
 <div class="container mt-4">
     <!-- 首页标题 -->
     <h1 class="text-center mb-4" style="color: #3a7bd5;">应用商店</h1>
-    
+<!-- 
+I've been running through the jungle
+我愿穿荆度棘
+I've been running with the wolves
+我愿与狼共舞
+To get to you to get to you
+只为你 只为到达你的身边
+I've been down the darkest alleys
+我曾深陷暗无天日的穷途末路
+Saw the dark side of the moon
+也曾四面楚歌 走投无路
+To get to you to get to you
+只为你 只为到达你的身边
+I've looked for love in every stranger
+我曾向每个陌路人探寻爱的踪影
+Took too much to ease the anger
+也曾竭尽全力只为释怀心中怒火
+All for you yeah all for you
+这一切都只为你 只因为你
+I've been running through the jungle
+我愿穿荆度棘
+I've been crying with the wolves
+我曾与狼同哮
+To get to you to get to you to get to you
+只为你 只为到达你的身边
+To get to you
+只为你
+To get to you -->
     <?php if (!empty($showEmptyState)): ?>
     <!-- 空状态处理 -->
     <div class="alert alert-warning">

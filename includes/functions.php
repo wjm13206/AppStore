@@ -55,6 +55,43 @@ function getAllCategories() {
 }
 
 /**
+ * 搜索应用函数
+ * 
+ * @param string $query 搜索关键词
+ * @return array 搜索结果数组
+ */
+function searchApps($query) {
+    global $conn;
+    
+    if (empty($query)) {
+        return [];
+    }
+    
+    $searchQuery = "%" . $conn->real_escape_string($query) . "%";
+    $sql = "SELECT apps.*, categories.name AS category_name 
+            FROM apps 
+            LEFT JOIN categories ON apps.category_id = categories.id 
+            WHERE apps.name LIKE ? OR apps.description LIKE ?";
+    $stmt = $conn->prepare($sql);
+    
+    if (!$stmt) {
+        error_log("SQL语句准备失败: " . $conn->error);
+        return [];
+    }
+    
+    $stmt->bind_param("ss", $searchQuery, $searchQuery);
+    $stmt->execute();
+    
+    $result = $stmt->get_result();
+    if (!$result) {
+        error_log("查询执行失败: " . $stmt->error);
+        return [];
+    }
+    
+    return $result->fetch_all(MYSQLI_ASSOC);
+}
+
+/**
  * 检查管理员是否已登录
  * 
  * @return bool 如果管理员已登录返回true，否则返回false

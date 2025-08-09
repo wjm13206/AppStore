@@ -31,6 +31,6 @@ CREATE TABLE IF NOT EXISTS admins (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- 插入默认管理员用户 (用户名: admin, 密码: 12345678
+-- 默认管理员用户 (用户名: admin, 密码: 12345678
 INSERT INTO admins (username, password) VALUES ('admin', '$2a$10$fbufWF5nQvaX9Z7jdDf8N.DHdPSpRC9Qd9X.nuDQymXQhXb47FnFW') 
 ON DUPLICATE KEY UPDATE username=username;

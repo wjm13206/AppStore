@@ -6,18 +6,9 @@ require_once 'includes/functions.php';
 // 获取关键词
 $query = isset($_GET['q']) ? trim($_GET['q']) : '';
 
-// 执行搜索查询 （ai X2）
+// 执行搜索查询
 if (!empty($query)) {
-    $searchQuery = "%" . $conn->real_escape_string($query) . "%";
-    $sql = "SELECT apps.*, categories.name AS category_name 
-            FROM apps 
-            LEFT JOIN categories ON apps.category_id = categories.id 
-            WHERE apps.name LIKE ? OR apps.description LIKE ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $searchQuery, $searchQuery);
-    $stmt->execute();
-    
-    $results = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $results = searchApps($query);
 }
 
 // 页面头部
