@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+require_once 'config.php'; // 主配置文件
 require_once 'includes/functions.php';
 
 // 获取分类ID
