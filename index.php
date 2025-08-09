@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL); // fack bug
 
-// 外服应用商店v1.0 - 首页模块
+// 应用商店v1.1.0 - 首页模块
 require_once 'config.php';  // 主配置文件
 require_once 'includes/functions.php'; // 工具函数
 
