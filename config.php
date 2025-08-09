@@ -17,7 +17,8 @@ define('DB_NAME', 'app_store');
 
 // 站点基本设置
 define('SITE_NAME', '应用商店');    // 页面标题
-//define('SITE_URL', 'http://localhost/'); // AI生成的好像没什么用 
+define('APP_VERSION', '1.1.0 Alpha');     // 项目版本
+
 
 /**
  * 初始化数据库连接

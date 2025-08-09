@@ -80,6 +80,7 @@ Feel it in my bones
             <div class="layui-card" style="margin-top: 20px;">
                 <div class="layui-card-header">系统信息</div>
                 <div class="layui-card-body">
+                    <p>项目版本: <?php echo APP_VERSION; ?></p>
                     <p>PHP版本: <?php echo PHP_VERSION; ?></p>
                     <p>服务器软件: <?php echo $_SERVER['SERVER_SOFTWARE'] ?? '未知'; ?></p>
                 </div>
