@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>外服应用商店 - 添加分类</title>
+    <title><?php echo SITE_NAME; ?> - 添加分类</title>
     <link rel="stylesheet" href="//unpkg.com/layui@2.11.5/dist/css/layui.css">
     <style>
         .layui-layout-admin .layui-side {

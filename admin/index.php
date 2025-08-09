@@ -23,7 +23,7 @@ $total_downloads = $conn->query("SELECT SUM(download_count) FROM apps")->fetch_r
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>应用商店 - 后台管理</title>
+    <title><?php echo SITE_NAME; ?> - 后台管理</title>
     <link rel="stylesheet" href="//unpkg.com/layui@2.11.5/dist/css/layui.css">
     <style>
         .layui-layout-admin .layui-side {

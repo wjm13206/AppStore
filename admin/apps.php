@@ -25,7 +25,7 @@ if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>外服应用商店 - 应用管理</title>
+    <title><?php echo SITE_NAME; ?> - 应用管理</title>
     <link rel="stylesheet" href="//unpkg.com/layui@2.11.5/dist/css/layui.css">
     <style>
         .layui-layout-admin .layui-side {

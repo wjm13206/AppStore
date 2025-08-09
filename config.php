@@ -16,14 +16,13 @@ define('DB_PASS', 'ehk543ijg');
 define('DB_NAME', 'app_store');        
 
 // 站点基本设置
-define('SITE_NAME', '应用商店');    // 显示在页面标题
-define('SITE_URL', 'http://localhost/'); // AI生成的好像没什么用 
+define('SITE_NAME', '应用商店');    // 页面标题
+//define('SITE_URL', 'http://localhost/'); // AI生成的好像没什么用 
 
 /**
  * 初始化数据库连接
- * 重试机制，避免MySQL还没准备好
  */
-$maxRetries = 3;
+$maxRetries = 2; // 最大重试次数
 $retryDelay = 2; // 秒
 
 for ($i = 0; $i < $maxRetries; $i++) {
@@ -39,8 +38,7 @@ for ($i = 0; $i < $maxRetries; $i++) {
         
         // 最后一次尝试也失败了
         die("<h2>系统维护中</h2>
-            <p>应用商店暂时无法访问，技术团队正在处理</p>
-            <p>错误代码: DB_CONN_001</p>");
+            <p>应用商店暂时无法访问，技术团队正在处理</p>");
     }
     
     break;
