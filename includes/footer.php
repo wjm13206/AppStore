@@ -2,7 +2,7 @@
         <div class="container py-4">
             <div class="row">
                 <div class="col-md-6">
-                    <h5>关于应用商店</h5>
+                    <h5>关于<?php echo SITE_NAME; ?></h5>
                     <p>我们致力于提供最优质的应用下载服务。</p> 
                 </div>
                 <div class="col-md-3">

@@ -4,7 +4,7 @@
 <div class="layui-side layui-bg-black" style="width: 250px;">
     <div class="layui-side-scroll">
         <ul class="layui-nav layui-nav-tree" lay-filter="side">
-            <li class="layui-nav-item layui-nav-title">应用商店</li>
+            <li class="layui-nav-item layui-nav-title"><?php echo SITE_NAME; ?></li>
             <li class="layui-nav-item">
                 <a href="index.php">
                     <i class="layui-icon layui-icon-console"></i>控制台
