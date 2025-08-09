@@ -28,10 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>外服应用商店 - 添加分类</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="//unpkg.com/layui@2.11.5/dist/css/layui.css">
     <style>
-        .sidebar {
+        .layui-layout-admin .layui-side {
             position: fixed;
             top: 0;
             bottom: 0;
@@ -47,35 +46,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body>
-    <div class="d-flex">
+    <div class="layui-layout layui-layout-admin">
         <?php include 'sidebar.php'; ?>
-
-        <!-- 主内容区 -->
+        
         <div class="main-content">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2>添加分类</h2>
-                <a href="categories.php" class="btn btn-secondary">
-                    <i class="bi bi-arrow-left me-1"></i>返回
-                </a>
-            </div>
+            <h2>添加分类</h2>
+            <hr>
             
-            <div class="card">
-                <div class="card-body">
-                    <form method="POST">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">分类名称</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary">
-                            <i class="bi bi-save me-1"></i>保存
-                        </button>
-                    </form>
+            <form class="layui-form" method="POST">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">分类名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="name" required lay-verify="required" placeholder="请输入分类名称" class="layui-input">
+                    </div>
                 </div>
-            </div>
+                
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">添加分类</button>
+                        <a href="categories.php" class="layui-btn layui-btn-primary">取消</a>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="//unpkg.com/layui@2.11.5/dist/layui.js"></script>
+    <script>
+    layui.use('form', function(){
+      var form = layui.form;
+      form.render();
+    });
+    </script>
 </body>
 </html>

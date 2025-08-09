@@ -3,7 +3,7 @@
 session_start();
 require_once '../config.php';
 
-// 检查管理员是否登录
+// 检查是否登录
 if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
     header("Location: login.php");
     exit;
@@ -38,10 +38,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>外服应用商店 - 编辑分类</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="//unpkg.com/layui@2.11.5/dist/css/layui.css">
     <style>
-        .sidebar {
+        .layui-layout-admin .layui-side {
             position: fixed;
             top: 0;
             bottom: 0;
@@ -57,27 +56,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body>
-    <div class="d-flex">
-               <!-- 侧边栏 -->
+    <div class="layui-layout layui-layout-admin">
         <?php include 'sidebar.php'; ?>
-
-        <!-- 主内容区 -->
+        
         <div class="main-content">
             <h2>编辑分类</h2>
             <hr>
             
-            <form method="POST">
-                <div class="mb-3">
-                    <label for="name" class="form-label">分类名称</label>
-                    <input type="text" class="form-control" id="name" name="name" value="<?php echo htmlspecialchars($category['name']); ?>" required>
+            <form class="layui-form" method="POST">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">分类名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="name" value="<?php echo htmlspecialchars($category['name']); ?>" required lay-verify="required" class="layui-input">
+                    </div>
                 </div>
                 
-                <button type="submit" class="btn btn-primary">保存更改</button>
-                <a href="categories.php" class="btn btn-secondary ms-2">取消</a>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">保存更改</button>
+                        <a href="categories.php" class="layui-btn layui-btn-primary">取消</a>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="//unpkg.com/layui@2.11.5/dist/layui.js"></script>
+    <script>
+    layui.use('form', function(){
+      var form = layui.form;
+      form.render();
+    });
+    </script>
 </body>
 </html>

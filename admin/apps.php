@@ -26,10 +26,9 @@ if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>外服应用商店 - 应用管理</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="//unpkg.com/layui@2.11.5/dist/css/layui.css">
     <style>
-        .sidebar {
+        .layui-layout-admin .layui-side {
             position: fixed;
             top: 0;
             bottom: 0;
@@ -45,54 +44,53 @@ if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
     </style>
 </head>
 <body>
-   <div class="d-flex">
-        <?php include 'sidebar.php'; ?> 
-
-        <!-- 主内容区 -->
+    <div class="layui-layout layui-layout-admin">
+        <?php include 'sidebar.php'; ?>
+        
         <div class="main-content">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2>应用管理</h2>
-                <a href="add_app.php" class="btn btn-primary">
-                    <i class="bi bi-plus-circle me-1"></i>添加应用
-                </a>
+            <h2>应用管理</h2>
+            <hr>
+            
+            <div class="layui-btn-container">
+                <a href="add_app.php" class="layui-btn">添加应用</a>
             </div>
             
-            <div class="table-responsive">
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>名称</th>
-                            <th>分类</th>
-                            <th>版本</th>
-                            <th>下载量</th>
-                            <th>操作</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($apps as $app): ?>
-                        <tr>
-                            <td><?php echo $app['id']; ?></td>
-                            <td><?php echo $app['name']; ?></td>
-                            <td><?php echo $app['category_name']; ?></td>
-                            <td><?php echo $app['version']; ?></td>
-                            <td><?php echo $app['download_count']; ?></td>
-                            <td>
-                                <a href="edit_app.php?id=<?php echo $app['id']; ?>" class="btn btn-sm btn-warning me-1">
-                                    <i class="bi bi-pencil"></i>
-                                </a>
-                                <a href="apps.php?delete=<?php echo $app['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('确定删除此应用吗？')">
-                                    <i class="bi bi-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            </div>
+            <table class="layui-table" lay-even>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>应用名称</th>
+                        <th>分类</th>
+                        <th>版本</th>
+                        <th>大小</th>
+                        <th>下载量</th>
+                        <th>创建时间</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($apps as $app): ?>
+                    <tr>
+                        <td><?php echo $app['id']; ?></td>
+                        <td><?php echo htmlspecialchars($app['name']); ?></td>
+                        <td><?php echo htmlspecialchars($app['category_name'] ?? '未分类'); ?></td>
+                        <td><?php echo htmlspecialchars($app['version']); ?></td>
+                        <td><?php echo htmlspecialchars($app['size']); ?></td>
+                        <td><?php echo $app['download_count']; ?></td>
+                        <td><?php echo date('Y-m-d H:i:s', strtotime($app['created_at'])); ?></td>
+                        <td>
+                            <div class="layui-btn-group">
+                                <a href="edit_app.php?id=<?php echo $app['id']; ?>" class="layui-btn layui-btn-sm">编辑</a>
+                                <a href="apps.php?delete=<?php echo $app['id']; ?>" class="layui-btn layui-btn-danger layui-btn-sm" onclick="return confirm('确定要删除这个应用吗？')">删除</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="//unpkg.com/layui@2.11.5/dist/layui.js"></script>
 </body>
 </html>

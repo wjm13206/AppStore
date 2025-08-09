@@ -12,7 +12,7 @@ error_reporting(E_ALL);
 // 数据库配置
 define('DB_HOST', '1Panel-mysql-zFnx');  
 define('DB_USER', 'root');              
-define('DB_PASS', 'Wxw1320wxw');       
+define('DB_PASS', 'ehk543ijg');       
 define('DB_NAME', 'app_store');        
 
 // 站点基本设置

@@ -1,10 +1,6 @@
 <?php
 // 侧边栏组件
 ?>
-<!--  layui.css -->
-<link href="//unpkg.com/layui@2.11.5/dist/css/layui.css" rel="stylesheet"></div>
-<!--  layui.js -->
-<script src="//unpkg.com/layui@2.11.5/dist/layui.js"></script></div>
 <div class="layui-side layui-bg-black" style="width: 250px;">
     <div class="layui-side-scroll">
         <ul class="layui-nav layui-nav-tree" lay-filter="side">

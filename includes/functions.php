@@ -53,4 +53,14 @@ function getAllCategories() {
     
     return $result->fetch_all(MYSQLI_ASSOC);
 }
+
+/**
+ * 检查管理员是否已登录
+ * 
+ * @return bool 如果管理员已登录返回true，否则返回false
+ */
+function isAdminLoggedIn() {
+    // 检查session中的admin_logged_in变量
+    return isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true;
+}
 ?>
