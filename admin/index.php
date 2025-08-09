@@ -82,8 +82,7 @@ $total_downloads = $conn->query("SELECT SUM(download_count) FROM apps")->fetch_r
                 <div class="layui-card-header">系统信息</div>
                 <div class="layui-card-body">
                     <p>PHP版本: <?php echo PHP_VERSION; ?></p>
-                    <p>服务器软件: <?php echo $_SERVER['SERVER_SOFTWARE'] ?? '未知'; ?></p>
-                    <p>数据库: MySQL</p>
+                    <p>服务器软件: <?php echo $_SERVER['SERVER_SOFTWARE'] ?? '未知'; ?></p>>
                 </div>
             </div>
         </div>
