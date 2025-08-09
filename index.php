@@ -26,7 +26,7 @@ include 'includes/header.php';
 
 <div class="container mt-4">
     <!-- 首页标题 -->
-    <h1 class="text-center mb-4" style="color: #3a7bd5;">应用商店</h1>
+    <h1 class="text-center mb-4" style="color: #3a7bd5;"><?php echo SITE_NAME; ?></h1>
 <!-- 
 I've been running through the jungle
 我愿穿荆度棘

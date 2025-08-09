@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="text-center py-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2025 应用商店 版权所有
+            © 2025 <?php echo SITE_NAME; ?> 版权所有
         </div>
     </footer>
       
