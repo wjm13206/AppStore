@@ -57,11 +57,6 @@
             }
         }
     </style>
-    
-    <!-- 头部统计代码 -->
-    <!-- Google Analytics -->
-    <!-- <script async src="https://123.com"></script> -->
-    </script>
 </head>
 <body>
     <!-- 导航栏开始 -->
