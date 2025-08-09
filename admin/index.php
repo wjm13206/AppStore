@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 // 后台管理首页
 session_start();
 require_once '../config.php';
+require_once '../includes/functions.php';
 
 // 是否登录
 if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
