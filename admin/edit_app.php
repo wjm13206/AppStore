@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="container mt-4">
             <h2 class="mb-4">编辑应用</h2>
             
-            <form method="POST">
+            <form class="layui-form" method="POST">
                 <div class="layui-form-item">
                     <label class="layui-form-label">应用名称</label>
                     <div class="layui-input-block">
@@ -94,11 +94,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label class="layui-form-label">分类</label>
                     <div class="layui-input-block">
                         <select name="category_id" required lay-verify="required">
-                            <option value="">请选择分类</option>
+                            <option value="">选择分类</option>
                             <?php foreach ($categories as $category): ?>
-                                <option value="<?php echo $category['id']; ?>" <?php echo $category['id'] == $app['category_id'] ? 'selected' : ''; ?>>
-                                    <?php echo htmlspecialchars($category['name']); ?>
-                                </option>
+                            <option value="<?php echo $category['id']; ?>" <?php echo $category['id'] == $app['category_id'] ? 'selected' : ''; ?>>
+                                <?php echo htmlspecialchars($category['name']); ?>
+                            </option>
                             <?php endforeach; ?>
                         </select>
                     </div>

@@ -1,5 +1,5 @@
 <?php
-// 功能函数 Ai x3
+// 功能函数
 
 function getPopularApps($limit = 6) {
     global $conn;
@@ -137,9 +137,9 @@ function getTotalDownloads() {
 }
 
 /**
- * 检查管理员是否已登录
+ * 检查是否已登录
  * 
- * @return bool 如果管理员已登录返回true，否则返回false
+ * @return bool 如果已登录返回true，否则返回false
  */
 function isAdminLoggedIn() {
     // 检查session中的admin_logged_in变量

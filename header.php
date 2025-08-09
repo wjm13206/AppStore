@@ -3,7 +3,7 @@
 <head>
     <!-- 
         应用商店 - 主模板
-        最后更新：2025-7-15 
+        最后更新：2025-8-9
     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
