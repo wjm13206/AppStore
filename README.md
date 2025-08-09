@@ -56,7 +56,7 @@
 ├── app.php             # 应用列表页
 ├── category.php        # 分类页
 ├── config.php          # 配置文件
-├── database_schema.sql # 数据库结构文件
+├── mysql.sql           # 数据库文件
 ├── details.php         # 应用详情页
 ├── header.php
 ├── index.php           # 首页
@@ -80,4 +80,6 @@
 
 ## 许可证
 
-本项目为开源项目，可根据需要进行修改和分发。
+本项目采用极云科技开源软件协议发布，您可以根据需要自由使用、修改和分发本软件。
+
+Copyright (c) [2025] [JiyunTech]
