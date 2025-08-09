@@ -15,41 +15,49 @@ if(isset($_GET['id'])) {
     $result = $conn->query($sql);
     
     
-    //果然不能乱用AI不过能用就行
     if($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        
-        echo '<div class="container mt-4">';
-        echo '<div class="row">';
-        echo '<div class="col-md-4">';
-        echo '<img src="'.$row['image_url'].'" class="img-fluid" alt="'.$row['name'].'">';
-        echo '</div>';
-        echo '<div class="col-md-8">';
-        echo '<h1>'.$row['name'].'</h1>';
-        echo '<p class="text-muted">版本: '.$row['version'].' | 大小: '.$row['size'].'MB</p>';
-        echo '<p>'.$row['description'].'</p>';
-        echo '<a href="'.$row['download_url'].'" class="btn btn-success btn-lg">下载</a>';
-        echo '</div></div>';
-        
-        // 截图
-        echo '<div class="row mt-4">';
-        echo '<div class="col-12">';
-        echo '<h3>应用截图</h3>';
-        echo '<div class="row">';
-        
-        $screenshots = explode(',', $row['screenshots']);
-        foreach($screenshots as $screenshot) {
-            echo '<div class="col-md-3 mb-3">';
-            echo '<img src="'.$screenshot.'" class="img-thumbnail" alt="截图">';
-            echo '</div>';
-        }
-        
-        echo '</div></div></div>';
+        ?>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="<?php echo $row['image_url']; ?>" class="img-fluid" alt="<?php echo $row['name']; ?>">
+                </div>
+                <div class="col-md-8">
+                    <h1><?php echo $row['name']; ?></h1>
+                    <p class="text-muted">版本: <?php echo $row['version']; ?> | 大小: <?php echo $row['size']; ?>MB</p>
+                    <p><?php echo $row['description']; ?></p>
+                    <a href="<?php echo $row['download_url']; ?>" class="btn btn-success btn-lg">下载</a>
+                </div>
+            </div>
+            
+            <!-- 截图 -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h3>应用截图</h3>
+                    <div class="row">
+                        <?php 
+                        $screenshots = explode(',', $row['screenshots']);
+                        foreach($screenshots as $screenshot) {
+                            echo '<div class="col-md-3 mb-3">';
+                            echo '<img src="'.$screenshot.'" class="img-thumbnail" alt="截图">';
+                            echo '</div>';
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
     } else {
-        echo '<div class="alert alert-danger">应用不存在</div>';
+        ?>
+        <div class="alert alert-danger">应用不存在</div>
+        <?php
     }
 } else {
-    echo '<div class="alert alert-warning">请选择应用</div>';
+    ?>
+    <div class="alert alert-warning">请选择应用</div>
+    <?php
 }
 
 require_once 'includes/footer.php';

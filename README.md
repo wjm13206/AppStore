@@ -82,4 +82,4 @@
 
 本项目采用极云科技开源软件协议发布，您可以根据需要自由使用、修改和分发本软件。
 
-Copyright (c) 2025 JiyunTech
+Copyright © 2025 JiyunTech
