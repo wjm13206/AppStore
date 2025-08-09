@@ -10,10 +10,10 @@ error_reporting(E_ALL);
  */
 
 // 数据库配置
-define('DB_HOST', '1Panel-mysql-zFnx');  
-define('DB_USER', 'root');              
-define('DB_PASS', 'ehk543ijg');       
-define('DB_NAME', 'app_store');        
+define('DB_HOST', '1Panel-mysql-zFnx'); // 数据库主机
+define('DB_USER', 'root'); // 数据库用户名             
+define('DB_PASS', 'ehk543ijg'); // 数据库密码       
+define('DB_NAME', 'app_store');  // 数据库名称      
 
 // 站点基本设置
 define('SITE_NAME', '应用商店');    // 页面标题
