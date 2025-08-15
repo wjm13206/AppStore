@@ -78,7 +78,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="layui-input-block">
                         <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名" class="layui-input">
                     </div>
+                </div>           
+                <div class="layui-form-item">
+                    <label class="layui-form-label">密码</label>
+                    <div class="layui-input-block">
+                        <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" class="layui-input">
+                    </div>
                 </div>
+                
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo" style="width: 100%;">登录</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="//unpkg.com/layui@2.11.5/dist/layui.js"></script>
+    <script>
+    layui.use('form', function(){
+      var form = layui.form;
+      form.render();
+    });
+    </script>
+</body>
+</html>
+
 <!--                 
 Walking through a crowd the village is aglow
 穿越重重人群 城市里灯火通明
@@ -222,29 +248,4 @@ Welcome to New York
 欢迎来到纽约城
 Welcome to New York
 欢迎来到纽约城
--->                
-                <div class="layui-form-item">
-                    <label class="layui-form-label">密码</label>
-                    <div class="layui-input-block">
-                        <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" class="layui-input">
-                    </div>
-                </div>
-                
-                <div class="layui-form-item">
-                    <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit lay-filter="formDemo" style="width: 100%;">登录</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    
-    <script src="//unpkg.com/layui@2.11.5/dist/layui.js"></script>
-    <script>
-    layui.use('form', function(){
-      var form = layui.form;
-      form.render();
-    });
-    </script>
-</body>
-</html>
+-->     
