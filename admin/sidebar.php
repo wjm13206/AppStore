@@ -21,6 +21,11 @@
                 </a>
             </li>
             <li class="layui-nav-item" style="margin-top: 20px;">
+                <a href="change_password.php">
+                    <i class="layui-icon layui-icon-password"></i>修改密码
+                </a>
+            </li>
+            <li class="layui-nav-item">
                 <a href="logout.php" style="color: #FF5722;">
                     <i class="layui-icon layui-icon-logout"></i>退出登录
                 </a>
