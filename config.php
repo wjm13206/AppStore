@@ -6,18 +6,18 @@ error_reporting(E_ALL);
 
 /*
  * 应用商店配置文件
- * 最后更新：2025-8-9
+ * 最后更新：2025-8-16
  */
 
 // 数据库配置
-define('DB_HOST', '1Panel-mysql-zFnx'); // 数据库主机
-define('DB_USER', 'root'); // 数据库用户名             
-define('DB_PASS', 'ehk543ijg'); // 数据库密码       
+define('DB_HOST', 'HOST'); // 数据库主机
+define('DB_USER', 'USER'); // 数据库用户名             
+define('DB_PASS', 'PASS'); // 数据库密码       
 define('DB_NAME', 'app_store');  // 数据库名称      
 
 // 站点基本设置
 define('SITE_NAME', '应用商店');    // 页面标题
-define('APP_VERSION', '1.1.0 Alpha');     // 项目版本
+define('APP_VERSION', '1.1.0');     // 项目版本
 
 
 /**
