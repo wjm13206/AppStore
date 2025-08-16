@@ -35,7 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     // 错误检查
     if ($stmt === false) {
-        die("预处理语句创建失败: " . $conn->error);
+        header("Location: ../error.php?msg=" . urlencode("预处理语句创建失败: " . $conn->error));
+        exit();
     }
     
 
@@ -43,7 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     // 执行错误检查
     if (!$stmt->execute()) {
-        die("执行失败: " . $stmt->error);
+        header("Location: ../error.php?msg=" . urlencode("执行失败: " . $stmt->error));
+        exit();
     }
     
     header("Location: apps.php");

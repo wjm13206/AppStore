@@ -17,7 +17,7 @@ define('DB_NAME', 'app_store');  // 数据库名称
 
 // 站点基本设置
 define('SITE_NAME', '应用商店');    // 页面标题
-define('APP_VERSION', '1.1.0');     // 项目版本
+define('APP_VERSION', '1.1.1 Alpha');     // 项目版本
 
 
 /**
@@ -38,45 +38,8 @@ for ($i = 0; $i < $maxRetries; $i++) {
         }
         
         // 最后一次尝试也失败了
-        die("<!DOCTYPE html>
-<html lang='zh-CN'>
-<head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>系统维护中</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
-            text-align: center;
-            padding: 50px;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #e74c3c;
-            margin-bottom: 20px;
-        }
-        p {
-            color: #555;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-    </style>
-</head>
-<body>
-    <div class='container'>
-        <h2>系统维护中</h2>
-        <p>应用商店暂时无法访问，技术团队正在处理</p>
-    </div>
-</body>
-</html>");
+        header("Location: error.php?msg=" . urlencode("数据库连接失败"));
+        exit();
     }
     
     break;

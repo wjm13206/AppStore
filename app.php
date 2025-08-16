@@ -11,8 +11,21 @@ if(isset($_GET['id'])) {
     $id = $_GET['id'];
     
     // 获取详情
-    $sql = "SELECT * FROM apps WHERE id = $id";
-    $result = $conn->query($sql);
+    $sql = "SELECT * FROM apps WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    
+    // 添加错误检查，确保预处理语句创建成功
+    if ($stmt === false) {
+        header("Location: ../error.php?msg=" . urlencode("预处理语句创建失败: " . $conn->error));
+        exit();
+    }
+    
+    // 绑定参数并执行查询
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    
+    // 获取结果
+    $result = $stmt->get_result();
     
     
     if($result->num_rows > 0) {

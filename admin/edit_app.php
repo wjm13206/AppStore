@@ -44,7 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     // 错误检查
     if ($stmt === false) {
-        die("预处理语句创建失败: " . $conn->error);
+        header("Location: ../error.php?msg=" . urlencode("预处理语句创建失败: " . $conn->error));
+        exit();
     }
     
     $stmt->bind_param("sissssssi", $name, $category_id, $version, $size, $description, $file_path, $icon_path, $screenshots, $id);
@@ -82,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="container mt-4">
             <h2 class="mb-4">编辑应用</h2>
             
-            <form class="layui-form" method="POST">
+            <form method="POST">
                 <div class="layui-form-item">
                     <label class="layui-form-label">应用名称</label>
                     <div class="layui-input-block">
