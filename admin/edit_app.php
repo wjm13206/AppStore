@@ -82,8 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="main-content container-fluid py-4" style="margin-left: 220px;">
         <div class="container mt-4">
             <h2 class="mb-4">编辑应用</h2>
-            
-            <form method="POST">
+            <form class="layui-form" method="POST">
                 <div class="layui-form-item">
                     <label class="layui-form-label">应用名称</label>
                     <div class="layui-input-block">
