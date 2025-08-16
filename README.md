@@ -48,6 +48,7 @@
 │   ├── login.php       # 管理员登录
 │   ├── logout.php      # 管理员登出
 │   └── sidebar.php     # 后台侧边栏
+│   └── change_password.php # 后台修改密码
 ├── includes/           # 公共包含文件
 │   ├── footer.php
 │   ├── functions.php   # 公共函数
